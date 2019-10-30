@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Los archivos vista siempre deben llevar el encabezado
+     y también las etiquettas odoo y data.
+-->
+<odoo>
+    <data>
+        <!-- Inicio de definición de la herencia de una vista -->
+        <record id="view_account_payment_tree_amount_currency" model="ir.ui.view">
+            <field name="name">view_account_payment_tree_amount_currency</field>
+            <field name="inherit_id" ref="account.view_account_payment_tree"/><!-- cuando se hereda una vista se debe indicar, cual es la vista a heredar-->
+            <field name="model">account.payment</field>
+            <field name="arch" type="xml">
+                <field name="amount" position="after"><!-- Para colocar nuevos campos en la vista se define el campo que 
+                se debe tomar como referencia, al colocar el atributo position se define si será colocado antes o después-->
+                    <field name="amount_currency" sum="Amount curency"/><!-- Este es un nuevo campo-->
+                </field>
+                <field name="amount" position="replace">
+                    <field name="amount"/>
+                </field>
+            </field>
+        </record>
+        <!-- Termina definición de vista -->
+         <record id="view_account_payment_tree_amount_currency_supplier" model="ir.ui.view">
+            <field name="name">view_account_payment_tree_amount_currency</field>
+            <field name="inherit_id" ref="account.view_account_supplier_payment_tree"/><!-- cuando se hereda una vista se debe indicar, cual es la vista a heredar-->
+            <field name="model">account.payment</field>
+            <field name="arch" type="xml">
+                <field name="amount" position="after"><!-- Para colocar nuevos campos en la vista se define el campo que 
+                se debe tomar como referencia, al colocar el atributo position se define si será colocado antes o después-->
+                    <field name="amount_currency" sum="Amount curency"/><!-- Este es un nuevo campo-->
+                </field>
+                <field name="amount" position="replace">
+                    <field name="amount"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

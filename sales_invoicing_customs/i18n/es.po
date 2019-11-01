@@ -1,0 +1,266 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sales_invoicing_customs
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e-20190816\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-11-01 18:24+0000\n"
+"PO-Revision-Date: 2019-11-01 18:24+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sales_invoicing_customs
+#: model:mail.template,subject:sales_invoicing_customs.email_template_sale_terms
+msgid "${object.company_id.name} ${object.state in ('draft', 'sent') and 'Quotation' or 'Order'} (Ref ${object.name or 'n/a' })"
+msgstr "${object.company_id.name} ${object.state in ('draft', 'sent') and 'Presupuesto' or 'Pedido'} (Ref ${object.name or 'n/a' })"
+
+#. module: sales_invoicing_customs
+#: model:mail.template,body_html:sales_invoicing_customs.email_template_sale_terms
+msgid "<p>\n"
+"    LA REPRODUCCIÓN APÓCRIFA DE ESTE COMPROBANTE CONSTITUYE UN DELITO EN LOS TÉRMINOS DE LAS DISPOSICIONES FISCALES.\n"
+"    IMPUESTO RETENIDO DE CONFORMIDAD CON LA LEY DEL IMPUESTO AL VALOR AGREGADO.\n"
+"    NOS RESERVAMOS EL DERECHO DE COBRAR 30% SOBRE CHEQUES DEVUELTOS SEGUN ART.\n"
+"    193 DE LA LEY GENERAL DE TITULOS DE OPERACION DE CREDITO. \n"
+"    ESTE ES UN DOCUMENTO FISCAL DIGITAL VERSION 3.3 DE TIPO INGRESO.\n"
+"    COSTO DE $100.00 + IVA POR REFACTURACION, POR OMISION DE DATOS DEL CLIENTE.\n"
+"</p>\n"
+"<p>\n"
+"    POR ESTE PAGARE, DEBO(EMOS) Y PAGARE(MOS) INCONDICIONALMENTE A LA ORDEN DE METAL CLEANING DE MEXICO, S.A. DE C.V. EN DONDE SE ME REQUIERA,\n"
+"    PRECISAMENTE EL DIA __ DEL MES ____ DEL AÑO ____ LA CANTIDAD DE <strong>${format_amount(object.amount_total, object.pricelist_id.currency_id)}</strong> VALOR DEL SERVICIO QUE HE RECIBIDO A MI ENTERA SATISFACCIÓN,\n"
+"    LA FALTA DE PAGO OPORTUNO DE SU IMPORTE CAUSARA INTERESES MORATORIOS A LA TASA DEL 8% MENSUAL, SOBRE LA CANTIDAD INSOLUTA DESDE SU FECHA DE VENCIMIENTO Y HASTA EN LA QUE SE HAGA SU PAGO TOTAL. \n"
+"    ESTÁ REGIDO POR LA LEY GENERAL DE TÍTULOS Y OPERACIONES DE CRÉDITO EN SU ARTÍCULO 173 PARTE FINAL Y DEMÁS ARTÍCULOS RELATIVOS POR NO SER PAGARE DOMICILIADO\n"
+"</p>\n"
+"\n"
+"            "
+msgstr ""
+
+#. module: sales_invoicing_customs
+#: selection:sale.order,l10n_mx_edi_usage:0
+msgid "Acquisition of merchandise"
+msgstr ""
+
+#. module: sales_invoicing_customs
+#: model:ir.model.fields,field_description:sales_invoicing_customs.field_account_invoice__city
+msgid "City"
+msgstr "Ciudad"
+
+#. module: sales_invoicing_customs
+#: model:ir.model.fields,field_description:sales_invoicing_customs.field_sale_order_line__l10n_mx_edi_code_sat_id
+msgid "Code SAT"
+msgstr "Código SAT"
+
+#. module: sales_invoicing_customs
+#: selection:sale.order,l10n_mx_edi_usage:0
+msgid "Computer equipment and accessories"
+msgstr ""
+
+#. module: sales_invoicing_customs
+#: selection:sale.order,l10n_mx_edi_usage:0
+msgid "Constructions"
+msgstr ""
+
+#. module: sales_invoicing_customs
+#: model:ir.model.fields,field_description:sales_invoicing_customs.field_account_invoice__country_id
+msgid "Country"
+msgstr "País"
+
+#. module: sales_invoicing_customs
+#: model_terms:ir.ui.view,arch_db:sales_invoicing_customs.invoice_form_meclemsa_custom
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: sales_invoicing_customs
+#: selection:sale.order,l10n_mx_edi_usage:0
+msgid "Deposits in savings accounts, premiums based on pension plans."
+msgstr ""
+
+#. module: sales_invoicing_customs
+#: selection:sale.order,l10n_mx_edi_usage:0
+msgid "Dices, dies, molds, matrices and tooling"
+msgstr ""
+
+#. module: sales_invoicing_customs
+#: selection:sale.order,l10n_mx_edi_usage:0
+msgid "Donations"
+msgstr ""
+
+#. module: sales_invoicing_customs
+#: model:ir.model.fields,field_description:sales_invoicing_customs.field_sale_order__terms_template_id
+msgid "Email Template"
+msgstr "Plantilla de términos y condiciones"
+
+#. module: sales_invoicing_customs
+#: selection:sale.order,l10n_mx_edi_usage:0
+msgid "Funeral expenses"
+msgstr "Gastos funerales"
+
+#. module: sales_invoicing_customs
+#: selection:sale.order,l10n_mx_edi_usage:0
+msgid "General expenses"
+msgstr "Gastos generales"
+
+#. module: sales_invoicing_customs
+#: model:ir.model.fields,help:sales_invoicing_customs.field_sale_order__l10n_mx_edi_payment_method_id
+msgid "Indicates the way the invoice was/will be paid, where the options could be: Cash, Nominal Check, Credit Card, etc. Leave empty if unkown and the XML will show \"Unidentified\"."
+msgstr "Indica la forma en que se pagó o se pagará la factura, donde las opciones podrían ser: Efectivo, Cheque, Tarjeta de Crédito, etc. Deje vacía si no conoce la forma de pago y el XML mostrará \"No Identificado\"."
+
+#. module: sales_invoicing_customs
+#: model:ir.model,name:sales_invoicing_customs.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: sales_invoicing_customs
+#: model:ir.model.fields,field_description:sales_invoicing_customs.field_account_invoice__l10n_mx_edi_locality
+msgid "L10N Mx Edi Locality"
+msgstr "Localidad"
+
+#. module: sales_invoicing_customs
+#: selection:sale.order,l10n_mx_edi_usage:0
+msgid "Mandatory School Transportation Expenses"
+msgstr ""
+
+#. module: sales_invoicing_customs
+#: selection:sale.order,l10n_mx_edi_usage:0
+msgid "Medical expenses for disability"
+msgstr ""
+
+#. module: sales_invoicing_customs
+#: selection:sale.order,l10n_mx_edi_usage:0
+msgid "Medical insurance premiums"
+msgstr ""
+
+#. module: sales_invoicing_customs
+#: selection:sale.order,l10n_mx_edi_usage:0
+msgid "Medical, dental and hospital expenses."
+msgstr ""
+
+#. module: sales_invoicing_customs
+#: selection:sale.order,l10n_mx_edi_usage:0
+msgid "Office furniture and equipment investment"
+msgstr ""
+
+#. module: sales_invoicing_customs
+#: selection:sale.order,l10n_mx_edi_usage:0
+msgid "Other machinery and equipment"
+msgstr ""
+
+#. module: sales_invoicing_customs
+#: model:ir.model.fields,field_description:sales_invoicing_customs.field_sale_order__l10n_mx_edi_payment_method_id
+msgid "Payment Way"
+msgstr "Forma de pago"
+
+#. module: sales_invoicing_customs
+#: selection:sale.order,l10n_mx_edi_usage:0
+msgid "Payments for educational services (Colegiatura)"
+msgstr ""
+
+#. module: sales_invoicing_customs
+#: selection:sale.order,l10n_mx_edi_usage:0
+msgid "Real interest effectively paid for mortgage loans (room house)"
+msgstr ""
+
+#. module: sales_invoicing_customs
+#: selection:sale.order,l10n_mx_edi_usage:0
+msgid "Returns, discounts or bonuses"
+msgstr ""
+
+#. module: sales_invoicing_customs
+#: model:ir.model,name:sales_invoicing_customs.model_sale_order
+msgid "Sale Order"
+msgstr "Pedido de venta"
+
+#. module: sales_invoicing_customs
+#: model:ir.model,name:sales_invoicing_customs.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de pedido de venta"
+
+#. module: sales_invoicing_customs
+#: selection:sale.order,l10n_mx_edi_usage:0
+msgid "Satellite communications"
+msgstr ""
+
+#. module: sales_invoicing_customs
+#: model:ir.model.fields,field_description:sales_invoicing_customs.field_account_invoice__state_id
+msgid "State"
+msgstr "Estado"
+
+#. module: sales_invoicing_customs
+#: model:ir.model.fields,field_description:sales_invoicing_customs.field_account_invoice__street_name
+msgid "Street Name"
+msgstr "Nombre de la Calle"
+
+#. module: sales_invoicing_customs
+#: model:ir.model.fields,field_description:sales_invoicing_customs.field_account_invoice__street_number
+msgid "Street Number"
+msgstr ""
+
+#. module: sales_invoicing_customs
+#: model:ir.model.fields,field_description:sales_invoicing_customs.field_account_invoice__street_number2
+msgid "Street Number2"
+msgstr ""
+
+#. module: sales_invoicing_customs
+#: model:ir.model.fields,field_description:sales_invoicing_customs.field_account_invoice__street2
+msgid "Street2"
+msgstr "Calle2"
+
+#. module: sales_invoicing_customs
+#: selection:sale.order,l10n_mx_edi_usage:0
+msgid "Telephone communications"
+msgstr ""
+
+#. module: sales_invoicing_customs
+#: model:ir.model.fields,field_description:sales_invoicing_customs.field_account_invoice__terms_txt
+#: model:ir.model.fields,field_description:sales_invoicing_customs.field_sale_order__terms_txt
+msgid "Terms Txt"
+msgstr ""
+
+#. module: sales_invoicing_customs
+#: model:ir.model.fields,help:sales_invoicing_customs.field_sale_order_line__l10n_mx_edi_code_sat_id
+msgid "This value is required in CFDI version 3.3 to express the code of the product or service covered by the present concept. Must be used a key from the SAT catalog."
+msgstr "Este valor es obligatorio en CFDI versión 3.3 para indicar el código de producto o servicio cubierto por este concepto. Se debe utilizar una clave del catálogo del SAT."
+
+#. module: sales_invoicing_customs
+#: selection:sale.order,l10n_mx_edi_usage:0
+msgid "To define"
+msgstr ""
+
+#. module: sales_invoicing_customs
+#: selection:sale.order,l10n_mx_edi_usage:0
+msgid "Transportation equipment"
+msgstr ""
+
+#. module: sales_invoicing_customs
+#: model_terms:ir.ui.view,arch_db:sales_invoicing_customs.inherit_saleorder_report_html_terms
+#: model_terms:ir.ui.view,arch_db:sales_invoicing_customs.report_invoice_document_mx_term_from_sales
+msgid "Términos y condiciones"
+msgstr ""
+
+#. module: sales_invoicing_customs
+#: model:ir.model.fields,field_description:sales_invoicing_customs.field_sale_order__l10n_mx_edi_usage
+msgid "Usage"
+msgstr "Uso"
+
+#. module: sales_invoicing_customs
+#: model:ir.model.fields,help:sales_invoicing_customs.field_sale_order__l10n_mx_edi_usage
+msgid "Used in CFDI 3.3 to express the key to the usage that will gives the receiver to this invoice. This value is defined by the customer. \n"
+"Note: It is not cause for cancellation if the key set is not the usage that will give the receiver of the document."
+msgstr "Utilizado en CFDI 3.3 para indicar la clave del uso que le dará el receptor a esta factura. Este valor es definido por el cliente. \n"
+"Nota: No es motivo de cancelación si la clave configurada no corresponde con el uso que le dará el receptor del documento."
+
+#. module: sales_invoicing_customs
+#: selection:sale.order,l10n_mx_edi_usage:0
+msgid "Voluntary contributions to SAR"
+msgstr ""
+
+#. module: sales_invoicing_customs
+#: model:ir.model.fields,field_description:sales_invoicing_customs.field_account_invoice__zip
+msgid "Zip"
+msgstr "C.P."
+

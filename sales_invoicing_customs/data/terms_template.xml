@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="email_template_sale_terms" model="mail.template">
+            <field name="name">Términos y condiciones Meclemsa</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="subject">${object.company_id.name} ${object.state in ('draft', 'sent') and 'Quotation' or 'Order'} (Ref ${object.name or 'n/a' })</field>
+            <field name="email_from">${(object.user_id.email_formatted or user.email_formatted) | safe}</field>
+            <field name="partner_to"></field>
+            <field name="body_html" type="html">
+<p>
+    LA REPRODUCCIÓN APÓCRIFA DE ESTE COMPROBANTE CONSTITUYE UN DELITO EN LOS TÉRMINOS DE LAS DISPOSICIONES FISCALES.
+    IMPUESTO RETENIDO DE CONFORMIDAD CON LA LEY DEL IMPUESTO AL VALOR AGREGADO.
+    NOS RESERVAMOS EL DERECHO DE COBRAR 30% SOBRE CHEQUES DEVUELTOS SEGUN ART.
+    193 DE LA LEY GENERAL DE TITULOS DE OPERACION DE CREDITO. 
+    ESTE ES UN DOCUMENTO FISCAL DIGITAL VERSION 3.3 DE TIPO INGRESO.
+    COSTO DE $100.00 + IVA POR REFACTURACION, POR OMISION DE DATOS DEL CLIENTE.
+</p>
+<p>
+    POR ESTE PAGARE, DEBO(EMOS) Y PAGARE(MOS) INCONDICIONALMENTE A LA ORDEN DE METAL CLEANING DE MEXICO, S.A. DE C.V. EN DONDE SE ME REQUIERA,
+    PRECISAMENTE EL DIA __ DEL MES ____ DEL AÑO ____ LA CANTIDAD DE <strong>${format_amount(object.amount_total, object.pricelist_id.currency_id)}</strong> VALOR DEL SERVICIO QUE HE RECIBIDO A MI ENTERA SATISFACCIÓN,
+    LA FALTA DE PAGO OPORTUNO DE SU IMPORTE CAUSARA INTERESES MORATORIOS A LA TASA DEL 8% MENSUAL, SOBRE LA CANTIDAD INSOLUTA DESDE SU FECHA DE VENCIMIENTO Y HASTA EN LA QUE SE HAGA SU PAGO TOTAL. 
+    ESTÁ REGIDO POR LA LEY GENERAL DE TÍTULOS Y OPERACIONES DE CRÉDITO EN SU ARTÍCULO 173 PARTE FINAL Y DEMÁS ARTÍCULOS RELATIVOS POR NO SER PAGARE DOMICILIADO
+</p>
+
+            </field>
+        </record>
+    </data>
+</odoo>

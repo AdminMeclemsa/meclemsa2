@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="inherit_saleorder_report_html_terms" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//p[@t-field='doc.note']" position="replace" />
+        <xpath expr="//div[@name='signature']" position="before">
+            <div class="row">
+                <div class="col">
+                    <h3 style="padding:10px;">
+                        Términos y condiciones
+                    </h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <span t-field="doc.terms_txt"/>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="report_invoice_document_mx_term_from_sales" inherit_id="l10n_mx_edi.report_invoice_document_mx">
+        <xpath expr="//p[@name='comment']" position="attributes">
+            <attribute name="style">display:none</attribute>
+        </xpath>
+        <xpath expr="//p[@t-if='o.fiscal_position_id.note']" position="after">
+            <div class="row">
+                <div class="col">
+                    <h3 style="padding:10px;">
+                        Términos y condiciones
+                    </h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <span t-field="o.terms_txt"/>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

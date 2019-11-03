@@ -10,6 +10,10 @@
                 <field name="partner_id" position="replace">
                     <field string="Customer" name="partner_id" context="{'search_default_customer':1, 'default_is_company': True, 'show_vat': True}" options="{&quot;always_reload&quot;: True, &quot;no_quick_create&quot;: True}" domain="[('customer', '=', True)]" required="1"/>
                 </field>
+                <field name="date_invoice" position="after">
+                    <field name="terms_template_id"/>
+                    <field name="terms_txt" invisible="1"/>
+                </field>
                 <field name="partner_id" position="after">
                     <field name="street_name" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                     <div class="oe_edit_only o_row">

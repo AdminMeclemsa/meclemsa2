@@ -21,7 +21,7 @@ class SaleOrder(models.Model):
     @api.depends("terms_template_id")
     def _get_html_content(self):
         for sale in self:
-            if sale.terms_template_id:
+            if sale.id and sale.terms_template_id:
                 template = sale.terms_template_id.with_context(lang=self.env.user.lang)
                 sale.terms_txt = template._render_template(template.body_html, template.model_id.model, sale.id or 0)
 
@@ -84,7 +84,7 @@ class SaleOrder(models.Model):
              'street_number' : self.partner_id.street_number,
              'street_number2' : self.partner_id.street_number2,
              'l10n_mx_edi_locality' : self.partner_id.l10n_mx_edi_locality,
-             'terms_txt' : self.terms_txt})
+             })
         return invoice_vals
 
 class SaleOrderLine(models.Model):

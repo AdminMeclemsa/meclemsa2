@@ -6,6 +6,8 @@
 #              (ernesto.r.2.em@gmail.com)
 
 from odoo import models, api, _, fields
+import logging
+_logger = logging.getLogger(__name__)
 
 
 class AccountInvoice(models.Model):
@@ -20,7 +22,18 @@ class AccountInvoice(models.Model):
     street_number = fields.Char()
     street_number2 = fields.Char()
     l10n_mx_edi_locality = fields.Char()
-    terms_txt = fields.Html()
+    terms_template_id = fields.Many2one('mail.template', string='Email Template',
+                                  domain="[('model','=','account.invoice')]",
+                                  default=lambda self: self.env.ref('sales_invoicing_customs.email_template_sale_terms_invoice'),
+                                  required=False)
+    terms_txt = fields.Html(compute="_get_html_content")
+
+    @api.one
+    @api.depends("terms_template_id")
+    def _get_html_content(self):
+        if self.id and self.terms_template_id:
+            template = self.terms_template_id
+            self.terms_txt = template._render_template(template.body_html, template.model_id.model, self.id or 0)
 
     @api.multi
     @api.onchange("partner_id")

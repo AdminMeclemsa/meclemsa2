@@ -24,7 +24,7 @@ class AccountInvoice(models.Model):
     l10n_mx_edi_locality = fields.Char()
     terms_template_id = fields.Many2one('mail.template', string='Email Template',
                                   domain="[('model','=','account.invoice')]",
-                                  default=lambda self: self.env.ref('sales_invoicing_customs.email_template_sale_terms_invoice'),
+                                  #default=lambda self: self.env.ref('sales_invoicing_customs.email_template_sale_terms_invoice'),
                                   required=False)
     terms_txt = fields.Html(compute="_get_html_content")
 

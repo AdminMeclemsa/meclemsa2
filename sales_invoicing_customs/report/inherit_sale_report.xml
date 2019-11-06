@@ -2,6 +2,12 @@
 <odoo>
 
     <template id="inherit_saleorder_report_html_terms" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//div[@t-if='doc.user_id.name']" position="after">
+            <div class="col-auto mw-100 mb-2">
+                <strong>Moneda:</strong>
+                <p class="m-0" t-field="doc.currency_id"/>
+            </div>
+        </xpath>
         <xpath expr="//p[@t-field='doc.note']" position="replace" />
         <xpath expr="//div[@name='signature']" position="before">
             <div class="row">
@@ -20,6 +26,13 @@
     </template>
 
     <template id="report_invoice_document_mx_term_from_sales" inherit_id="l10n_mx_edi.report_invoice_document_mx">
+        <xpath expr="//div[@name='reference']" position="after">
+            <div name="currency" t-att-class="o_grid_layout">
+                <strong>Moneda:</strong>
+                <p><span t-field="o.currency_id"/></p>
+            </div>
+        </xpath>
+  
         <xpath expr="//p[@name='comment']" position="attributes">
             <attribute name="style">display:none</attribute>
         </xpath>

@@ -48,6 +48,27 @@
     ESTÁ REGIDO POR LA LEY GENERAL DE TÍTULOS Y OPERACIONES DE CRÉDITO EN SU ARTÍCULO 173 PARTE FINAL Y DEMÁS ARTÍCULOS RELATIVOS POR NO SER PAGARE DOMICILIADO
 </p>
 
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <div class="row">Nombre del suscriptor: ${object.partner_id.name}</div>
+            <div class="row">Lugar y fecha de suscripción: ${object.partner_id.name}</div>
+        </div>
+        <div class="col-6">
+            <div class="row">Ciudad: ${object.partner_id.city}</div>
+            <div class="row">Dirección: ${object.partner_id.street}</div>
+        </div>
+    </div>
+</div>
+<div class="row" style="padding-top:50px">
+    <div class="col-4">
+    </div>
+    <div class="col-4">
+        <div class="row">__________________________________________</div>
+        <div class="row">Aceptamos y pagaremos a su vencimiento</div>
+    </div>
+</div>
+
             </field>
         </record>
     </data>

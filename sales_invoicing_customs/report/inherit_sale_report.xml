@@ -16,9 +16,9 @@
                 <p class="m-0" t-field="doc.currency_id"/>
             </div>
         </xpath>
-        <td name="td_name" position="before">
+        <xpath expr="//td[@name='td_name']" position="before">
             <td name="td_sat_code"><span t-field="line.l10n_mx_edi_code_sat_id"/></td>
-        </td>
+        </xpath>
         <xpath expr="//p[@t-field='doc.note']" position="replace" />
         <xpath expr="//div[@name='signature']" position="before">
             <div class="row">

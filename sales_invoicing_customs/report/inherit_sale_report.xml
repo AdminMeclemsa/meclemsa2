@@ -19,7 +19,7 @@
         <xpath expr="//t[@t-set='colspan']" position="after">
             <th class="text-left">Código SAT</th>
         </xpath>
-        <xpath expr="//t[@t-if='not line.display_type']" position="prepend">
+        <xpath expr="//t[@t-if='not line.display_type']/td[0]" position="before">
             <td name="td_sat_code"><span t-field="line.l10n_mx_edi_code_sat_id"/></td>
         </xpath>
         <xpath expr="//p[@t-field='doc.note']" position="replace" />

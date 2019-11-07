@@ -50,7 +50,7 @@
         <xpath expr="//p[@name='comment']" position="attributes">
             <attribute name="style">display:none</attribute>
         </xpath>
-        <xpath expr="//p[@t-if='o.fiscal_position_id.note']" position="after">
+        <xpath expr="//div[@id='complement']" position="after">
             <div class="row">
                 <div class="col">
                     <h3 style="padding:10px;">

@@ -4,6 +4,14 @@
     <template id="inherit_saleorder_report_html_terms" inherit_id="sale.report_saleorder_document">
         <xpath expr="//div[@t-if='doc.user_id.name']" position="after">
             <div class="col-auto mw-100 mb-2">
+                <strong>Método de pago:</strong>
+                <p class="m-0" t-field="doc.l10n_mx_edi_payment_method_id"/>
+            </div>
+            <div class="col-auto mw-100 mb-2">
+                <strong>Uso:</strong>
+                <p class="m-0" t-field="doc.l10n_mx_edi_usage"/>
+            </div>
+            <div class="col-auto mw-100 mb-2">
                 <strong>Moneda:</strong>
                 <p class="m-0" t-field="doc.currency_id"/>
             </div>

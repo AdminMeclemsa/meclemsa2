@@ -16,7 +16,7 @@
                 <p class="m-0" t-field="doc.currency_id"/>
             </div>
         </xpath>
-        <xpath expr="//tbody[@class='sale_tbody']/t/tr[0]/t[@t-if='not line.display_type']" position="inside">
+        <xpath expr="//t[@t-if='not line.display_type']" position="inside">
             <td name="td_sat_code"><span t-field="line.l10n_mx_edi_code_sat_id"/></td>
         </xpath>
         <xpath expr="//p[@t-field='doc.note']" position="replace" />
